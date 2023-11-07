@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>My Cinema List</h1>
+
+  <form class="addFilme" >
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Gênero:</label>
+      <input type="text" class="form-control" id="genre" name="genre">
+    </div>
+
+    <div class="form-group">
+      <label for="year">Ano:</label>
+      <input type="text" class="form-control" id="year" name="year">
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Nota:</label>
+      <input type="text" class="form-control" id="rating" name="rating">
+    </div>
+
+  </form>
+
+  
+  <button class="add-movie" (click)="onAddMovieClick()">Adicionar Filme</button>
+
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Gênero</th>
+        <th>Ano</th>
+        <th>Nota</th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let filme of filmes">
+        <td>{{ filme.nome }}</td>
+        <td>{{ filme.genero }}</td>
+        <td>{{ filme.ano }}</td>
+        <td>{{ filme.nota }}</td>
+        <td><button class="btn btn-danger" (click)="deleteFilme(filme)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
