@@ -41,4 +41,32 @@ describe('ListaFilmesComponent', () => {
   });
 
 
+  it('should not add a movie with invalid data', () => {
+    component.newFilme.nome = '';
+    component.newFilme.genero = '';
+    component.newFilme.ano = '';
+    component.newFilme.nota = '';
+
+    component.onAddMovieClick();
+
+    expect(component.filmes.length).toBe(0);
+  });
+  it('should remove a movie', () => {
+    component.filmes = [{
+      nome: 'Filme 1',
+      genero: 'Ação',
+      ano: '2022',
+      nota: '4.5',
+    }];
+  
+    component.deleteFilme(component.filmes[0]);
+  
+
+    expect(component.filmes.length).toBe(0);
+  });
+  
+
 });
+
+
+
