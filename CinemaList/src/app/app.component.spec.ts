@@ -26,4 +26,7 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('myCinemaList app is running!');
   });
+
+
+
 });

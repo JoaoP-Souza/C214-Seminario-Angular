@@ -20,4 +20,25 @@ describe('ListaFilmesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  
+  it('should add a movie ', () => {
+    component.newFilme.nome = 'Filme 1';
+    component.newFilme.genero = 'Ação';
+    component.newFilme.ano = '2022';
+    component.newFilme.nota = '4.5';
+
+    component.onAddMovieClick();
+
+    expect(component.filmes.length).toBe(1);
+    expect(component.filmes[0]).toEqual({
+      nome: 'Filme 1',
+      genero: 'Ação',
+      ano: '2022',
+      nota: '4.5',
+    });
+  });
+
+
 });
