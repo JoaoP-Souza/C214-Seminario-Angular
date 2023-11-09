@@ -24,10 +24,14 @@ describe('ListaFilmesComponent', () => {
 
   
   it('should add a movie ', () => {
-    component.newFilme.nome = 'Filme 1';
-    component.newFilme.genero = 'Ação';
-    component.newFilme.ano = '2022';
-    component.newFilme.nota = '4.5';
+    const nameFilm = 'Filme 1';
+    const genreFilm = 'Ação';
+    const yearFilm = '2022';
+    const scoreFilm = '4.5';
+    component.newFilme.nome = nameFilm;
+    component.newFilme.genero = genreFilm;
+    component.newFilme.ano = yearFilm;
+    component.newFilme.nota = scoreFilm;
   
     const result = component.onAddMovieClick();
   
@@ -57,6 +61,15 @@ describe('ListaFilmesComponent', () => {
   
   expect(result).toBe('Por favor, preencha todos os campos obrigatórios.');
   });
+
+  it('should handle error when accessing input fields', () => {
+    spyOn(document, 'querySelector').and.returnValue(null);
+  
+    const result = component.onAddMovieClick();
+
+    expect(result).toBe('Erro ao acessar os campos de entrada.');
+  });
+  
   
   it('should remove a movie', () => {
     const initialMovies = [

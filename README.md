@@ -1,3 +1,5 @@
+[![CI Class](https://github.com/JoaoP-Souza/C214-Seminario-Angular/actions/workflows/ci.yml/badge.svg)](https://github.com/JoaoP-Souza/C214-Seminario-Angular/actions/workflows/ci.yml)
+
 Ao clonar, abra o terminal na aba CinemaList e insira os seguintes comandos
 
 npm i
