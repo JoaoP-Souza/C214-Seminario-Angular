@@ -23,27 +23,50 @@ export class ListaFilmesComponent implements OnInit {
   }
 
   onAddMovieClick() {
-    this.newFilme.nome = (document.querySelector('#title') as HTMLInputElement).value.toString(); // Convert the value to a string before assigning it to the nome property.
+    const titleInput = (document.querySelector('#title') as HTMLInputElement);
+    const genreInput = (document.querySelector('#genre') as HTMLInputElement);
+    const yearInput = (document.querySelector('#year') as HTMLInputElement);
+    const ratingInput = (document.querySelector('#rating') as HTMLInputElement);
 
-    this.newFilme.genero = (document.querySelector('#genre') as HTMLInputElement).value;
-    this.newFilme.ano = (document.querySelector('#year') as HTMLInputElement).value;
-    this.newFilme.nota = (document.querySelector('#rating') as HTMLInputElement).value;
+    if (titleInput && genreInput && yearInput && ratingInput) {
+      this.newFilme.nome = titleInput.value.toString();
+      this.newFilme.genero = genreInput.value;
+      this.newFilme.ano = yearInput.value;
+      this.newFilme.nota = ratingInput.value;
 
-    this.filmes.push(this.newFilme);
-    this.newFilme = {
-      nome: '',
-      genero: '',
-      ano: '',
-      nota: ''
-    };
+      // Verificar se os campos obrigatórios não estão vazios
+      if (this.newFilme.nome && this.newFilme.genero && this.newFilme.ano && this.newFilme.nota) {
+        this.filmes.push(this.newFilme);
+        this.newFilme = {
+          nome: '',
+          genero: '',
+          ano: '',
+          nota: ''
+        };
 
-    (document.querySelector('#title') as HTMLInputElement).value = '';
-    (document.querySelector('#genre') as HTMLInputElement).value = '';
-    (document.querySelector('#year') as HTMLInputElement).value = '';
-    (document.querySelector('#rating') as HTMLInputElement).value = '';
+        // Limpar os campos após a adição
+        titleInput.value = '';
+        genreInput.value = '';
+        yearInput.value = '';
+        ratingInput.value = '';
+
+        return 'Filme adicionado com sucesso!';
+      } else {
+        return 'Por favor, preencha todos os campos obrigatórios.';
+      }
+    } else {
+      return 'Erro ao acessar os campos de entrada.';
+    }
   }
 
   deleteFilme(filme: Filme) {
-    this.filmes.splice(this.filmes.indexOf(filme), 1);
+    const index = this.filmes.indexOf(filme);
+    if (index !== -1 && index < this.filmes.length) {
+      this.filmes.splice(index, 1);
+      return 'Filme excluído com sucesso!';
+    } else {
+      return 'Erro ao excluir o filme. Filme não encontrado na lista ou índice inválido.';
+    }
   }
 }
+
