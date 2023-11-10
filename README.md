@@ -5,6 +5,8 @@ Ao clonar, abra o terminal na pasta MyCinemaList e insira os seguintes comandos
     npm i - instala dependências do projeto
     
     npm install -g @angular/cli@15 - instala a versão 15 do angular no projeto
+
+npm install --save-dev jasmine - instala o framework jasmine de testes
     
     ng add @angular/material - adiciona a lib de ui angular Material UI
 
