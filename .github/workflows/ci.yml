@@ -32,7 +32,7 @@ jobs:
     #  run: npm install -g json-server
 
     - name: Executar testes
-      run: 
-        cd C:\Users\raulm\Downloads\Projeto_C214_Angular\C214-Seminario-Angular\CinemaList
-        npm install
-        npm run test
+      working-directory: C:\Users\raulm\Downloads\Projeto_C214_Angular\C214-Seminario-Angular\CinemaList
+      run: |
+      npm install
+      npm run test
