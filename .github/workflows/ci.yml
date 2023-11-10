@@ -32,5 +32,5 @@ jobs:
     #  run: npm install -g json-server
 
     - name: Executar testes
-      working-directory: C:\Users\raulm\Downloads\Projeto_C214_Angular\C214-Seminario-Angular\CinemaList
+      working-directory: CinemaList
       run: npm run test
