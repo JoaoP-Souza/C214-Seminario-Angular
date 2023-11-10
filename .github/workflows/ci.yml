@@ -21,8 +21,15 @@ jobs:
     - name: Instalar dependências
       run: npm install
 
-    - name: Abrir pasta
-      run: cd CinemaList
+    
+    #- name: Instalar angular
+    #  run: npm install -g @angular/cli@15
+
+    #- name: Instalar angular/material
+    #  run: npm install @angular/material
+
+    #- name: Instalar json
+    #  run: npm install -g json-server
 
     - name: Executar testes
-      run: npm test
+      run: npm test -- --include=CinemaList/src
