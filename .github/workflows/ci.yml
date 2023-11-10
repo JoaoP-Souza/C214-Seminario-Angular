@@ -24,7 +24,7 @@ jobs:
     
     - name: Install Angular CLI
       working-directory: CinemaList
-      run: npm install -g @angular/cli@15
+      run: npm install -g @angular/cli
 
     - name: Executar testes
       working-directory: CinemaList
