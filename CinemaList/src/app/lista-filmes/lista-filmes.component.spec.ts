@@ -22,32 +22,21 @@ describe('ListaFilmesComponent', () => {
   });
 
 
-  
-  it('should add a movie ', () => {
-    const nameFilm = 'Filme 1';
-    const genreFilm = 'Ação';
-    const yearFilm = '2022';
-    const scoreFilm = '4.5';
-    component.newFilme.nome = nameFilm;
-    component.newFilme.genero = genreFilm;
-    component.newFilme.ano = yearFilm;
-    component.newFilme.nota = scoreFilm;
-  
-    const result = component.onAddMovieClick();
-  
-    expect(component.filmes.length).toBe(1);
-    expect(component.filmes[0]).toEqual({
-      nome: 'Filme 1',
-      genero: 'Ação',
-      ano: '2022',
-      nota: '4.5',
-    });
-  
-    expect(component.newFilme).toEqual({ nome: '', genero: '', ano: '', nota: '' });
-  
+  it('should add a movie and verify the return ', () => {
+    // chamanado o método e passando os valores por parametro
+    const result = component.onAddMovieClick('Filme 1', 'Ação', '2022', '4.5', true);
+    // verificando retorno do filme
     expect(result).toBe('Filme adicionado com sucesso!');
   });
-  
+
+  it('should add a movie and verify the size of the string', () => {
+    // chamanado o método e passando os valores por parametro
+    component.onAddMovieClick('Filme 1', 'Ação', '2022', '4.5', true);
+    // verificando retorno do filme
+    expect(component.filmes.length).toBe(1);
+
+
+  });
 
   it('should not add a movie with invalid data', () => {
     component.newFilme.nome = '';
