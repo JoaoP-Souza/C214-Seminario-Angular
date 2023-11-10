@@ -22,7 +22,30 @@ export class ListaFilmesComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddMovieClick() {
+  onAddMovieClick(  title?: string, genre?: string, year?: string, rating?: string, teste?: boolean) {
+    if(teste == true){
+        if (title && genre && year && rating) {
+          this.newFilme.nome = title;
+          this.newFilme.genero = genre;
+          this.newFilme.ano = year;
+          this.newFilme.nota = rating;
+
+        this.filmes.push(this.newFilme);
+        this.newFilme = {
+          nome: '',
+          genero: '',
+          ano: '',
+          nota: ''
+        };
+          return 'Filme adicionado com sucesso!';
+
+        } else {
+          
+          return 'Por favor, preencha todos os campos obrigatórios.';
+        }
+
+  }else{
+
     const titleInput = (document.querySelector('#title') as HTMLInputElement);
     const genreInput = (document.querySelector('#genre') as HTMLInputElement);
     const yearInput = (document.querySelector('#year') as HTMLInputElement);
@@ -56,7 +79,7 @@ export class ListaFilmesComponent implements OnInit {
       }
     } else {
       return 'Erro ao acessar os campos de entrada.';
-    }
+    }}
   }
 
   deleteFilme(filme: Filme) {
