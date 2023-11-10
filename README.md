@@ -1,17 +1,15 @@
 [![CI Class](https://github.com/JoaoP-Souza/C214-Seminario-Angular/actions/workflows/ci.yml/badge.svg)](https://github.com/JoaoP-Souza/C214-Seminario-Angular/actions/workflows/ci.yml)
 
-Ao clonar, abra o terminal na aba CinemaList e insira os seguintes comandos
+Ao clonar, abra o terminal na pasta MyCinemaList e insira os seguintes comandos
 
-npm i
+    npm i - instala dependências do projeto
+    
+    npm install -g @angular/cli@15 - instala a versão 15 do angular no projeto
+    
+    ng add @angular/material - adiciona a lib de ui angular Material UI
 
-npm install -g @angular/cli@15
+Após executá-los, abra um prompts de comando e execute,
 
-ng add @angular/material
-
-npm install -g json-server
-
-apos executa-los, abra 1 prompts de comando e execute,
-
-npm test, para executar os testes
-
-ng serve --open, para iniciar a aplicação web
+    npm test, para executar os testes unitários, usando da ferramenta Jasmine
+    
+    ng serve --open, para iniciar a aplicação web em um ambiente local
