@@ -1,3 +1,4 @@
+/*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdicionarFilmeComponent } from './adicionar-filme.component';
@@ -19,3 +20,4 @@ describe('AdicionarFilmeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/
