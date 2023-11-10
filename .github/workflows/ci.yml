@@ -19,6 +19,7 @@ jobs:
         node-version: '14'
 
     - name: Instalar dependências
+      working-directory: CinemaList
       run: npm install
     
     - name: Install Angular CLI
