@@ -20,16 +20,10 @@ jobs:
 
     - name: Instalar dependências
       run: npm install
-
     
-    #- name: Instalar angular
-    #  run: npm install -g @angular/cli@15
-
-    #- name: Instalar angular/material
-    #  run: npm install @angular/material
-
-    #- name: Instalar json
-    #  run: npm install -g json-server
+    - name: Install Angular CLI
+      working-directory: CinemaList
+      run: npm install -g @angular/cli@15
 
     - name: Executar testes
       working-directory: CinemaList
