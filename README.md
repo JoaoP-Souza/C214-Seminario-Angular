@@ -1,3 +1,7 @@
+Este Projeto tem o objetivo de abordar o uso de conceitos da engenharia de software como a implementação de uma pipeline pelo github actions, testes unitários que testam métodos desenvolvidos e validam novas iterações que passam pela esteira de CI/CD. 
+
+O framework escolhido foi o Angular, usado pra criar uma aplicação web simples que realiza um CRUD completo e exibe uma lista de filmes com informações cadastradas pelo usuário.
+
 [![CI Class](https://github.com/JoaoP-Souza/C214-Seminario-Angular/actions/workflows/ci.yml/badge.svg)](https://github.com/JoaoP-Souza/C214-Seminario-Angular/actions/workflows/ci.yml)
 
 Ao clonar, abra o terminal na pasta MyCinemaList e insira os seguintes comandos
